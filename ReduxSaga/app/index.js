@@ -1,28 +1,21 @@
+import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-// import redux from './config/redux';
 import store from './redux/store';
-import LoginScreen from './components/login/login';
+import AppContainer from './navigations/app-navigation';
 import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  Text,
+    SafeAreaView,
+    ScrollView,
+    View,
+    Text,
 } from 'react-native';
 
-export default class App extends Component {
-  render() {
+export default function App() {
     return (
-      <Provider store={store.store}>
-        <SafeAreaView>
-          <ScrollView>
-            <LoginScreen/>
-            {/* <View>
-              <Text>aaaaaaaaaaaa</Text>
-            </View> */}
-          </ScrollView>
-        </SafeAreaView>
-      </Provider>
-  );
-  }
+        <Provider store={store.store}>
+            <SafeAreaView style={{ flex: 1 }}>
+                <AppContainer />
+            </SafeAreaView>
+        </Provider>
+    );
 };

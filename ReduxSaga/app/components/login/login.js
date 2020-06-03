@@ -28,8 +28,9 @@ class LoginScreen extends Component {
             user: this.state.username,
             pass: this.state.password
         }
-        await this.props.login(data)
-        console.log(this.props.user)
+        this.props.navigation.navigate('Home')
+        // await this.props.login(data)
+        // console.log(this.props.user)
     }
 
     render() {
