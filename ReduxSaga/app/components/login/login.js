@@ -11,6 +11,7 @@ import {
 } from 'native-base';
 import { connect } from 'react-redux';
 import { login } from '../../redux/actions/login.action';
+import navigatorService from '../../redux/navigator.service';
 
 class LoginScreen extends Component {
     constructor(props) {
@@ -28,8 +29,7 @@ class LoginScreen extends Component {
             user: this.state.username,
             pass: this.state.password
         }
-        this.props.navigation.navigate('Home')
-        // await this.props.login(data)
+        await this.props.login(data)
         // console.log(this.props.user)
     }
 
